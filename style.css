@@ -1,0 +1,312 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+
+  header {
+     background-color: #f3f3f3;
+    position: relative;
+  }
+  
+  header h1 {
+    text-align: center; 
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+  }
+  
+  nav {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+  }
+
+nav ul {
+  padding-bottom: 1rem;
+
+  text-align: center;
+}
+
+nav ul li {
+  /* display: inline-block; */
+  margin: 0 10px;
+  padding: 10px 0;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color:#EEE(255, 255, 255);
+}
+body {
+    height: 100%;
+  }
+  
+  #wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+.about-background{background-color: rgba(156, 178, 191, 0.763);
+  background-image: url("images/bg.jpg");
+  background-size: cover;}
+  
+footer {
+  background: #000000;
+  color: #FFF;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+header {
+    background-color: #000000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+   /* display: none; */
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: -300px;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: transform .5s;
+  }
+  
+  #navBtn:checked ~ nav {
+    display: block;
+    transform: translateX(-300px);
+  }
+  #navBtn {
+    display: none;
+  }
+  
+  .sec03 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+  .open {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cdc1c1;
+    border-radius: 2px;
+  }
+
+  
+
+  .center {
+  text-align: center;
+  margin: 40px auto 0;
+}
+
+.circle img {
+  border-radius: 50%;
+  width: 300px;
+  display: block;
+  margin: 100px auto 0;
+}
+
+.mojityuo{
+  margin: auto;
+  width: 300px;
+}
+  /*humburger button*/
+  
+  .open::before,
+  .open::after {
+    content: "";
+  }
+  
+  .open span,
+  .open::before,
+  .open::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 30%;
+    width: 40%;
+    border-bottom: 2px solid #e6dddd;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .open::before {
+    transform: translateY(-8px);
+  }
+  
+  .open::after {
+    transform: translateY(8px);
+  }
+  
+  /*close button*/
+  #navBtn:checked + .open {
+    background: #565656;
+  }
+  
+  #navBtn:checked + .open span {
+    transform: scaleX(0);
+  }
+  
+  #navBtn:checked + .open::before {
+    transform: rotate(45deg);
+  }
+  
+  #navBtn:checked + .open::after {
+    transform: rotate(-45deg);
+  }
+
+  .container{
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  scale: 0.9;
+}
+
+ .container2{
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  scale: 0.9;
+}
+
+.portfolio{
+  color: #f3f3f3;
+}
+.portfolio2{
+  color: #6b6b6b;
+}
+
+/* フォーム全体の見た目 */
+main form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ラベルのスタイル */
+main form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* 入力フィールドとテキストエリア */
+main form input[type="text"],
+main form input[type="email"],
+main form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* フォーカス時の強調 */
+main form input[type="text"]:focus,
+main form input[type="email"]:focus,
+main form textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* 送信ボタン */
+main form button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ホバー時 */
+main form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* 下部注意書きの中央寄せ */
+main p {
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.formtext {
+  
+  max-width: 600px;       /* 幅を固定して中央に */
+  margin: -50px auto;         /* 中央寄せ */
+  text-align: center;       /* テキストは左揃え */
+  line-height: 1.6;
+  padding: 3rem;
+  position: relative;
+    top: 100px; /* 上に10pxずらす */
+  }
+
+
+  @media all and (min-width: 1025px) {
+    nav {
+      display: block;
+      height: auto;
+    width: 100%;
+    position: static;
+    background-color: transparent;
+    }
+    
+    nav ul li {
+    display: inline-block;
+  }
+
+    #navBtn,
+    .open {
+      display: none;
+    }
+  }
+
+  nav ul li a {
+    color: #ffffff;
+  }
